@@ -1,5 +1,5 @@
 /* 
-========== CORES ========== 
+==================== CORES ====================
 
 Background: #292b2c
 Background mais claro: #555555
@@ -28,8 +28,8 @@ body {
     padding-top: 80px;
 }
 
-/* ========== BARRA DE NAVEGAÇÃO ========== */
-.navegacao {
+/* ==================== BARRA DE NAVEGAÇÃO ==================== */
+.nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -83,10 +83,104 @@ body {
 }
 
 .nav-list a:hover {
-    color: #00bfff
+    color: #00bfff;
 }
 
-/* ========== SOBRE MIM ========== */
+/* MENU HAMBURGUER */
+
+.nav-toggle {
+    display: none;
+    border: none;
+    background: none;
+    border-top: 3px solid #f0f0f0;
+    cursor: pointer;
+}
+
+.nav-toggle::before,
+.nav-toggle::after {
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #f0f0f0;
+    margin-top: 5px;
+    position: relative;
+    transition: .3s;
+}
+
+@media (max-width: 750px) {
+    .nav-toggle {
+        display: block;
+        z-index: 2;
+    }
+
+    .nav-list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #00bfff;
+        clip-path: circle(100px at 90% -15%);
+        transition: .5s ease-out;
+
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .nav-list a {
+        font-size: 24px;
+        opacity: 0;
+    }
+
+     .nav-list li:nth-child(1) a {
+        transition: 0.5s 0.2s;
+    }
+
+    .nav-list li:nth-child(2) a {
+        transition: 0.5s 0.4s;
+    }
+
+    .nav-list li:nth-child(3) a { 
+        transition: 0.5s 0.6s;
+    }
+
+    .nav-list li:nth-child(4) a {
+        transition: 0.5s 0.8s;
+    }
+
+    /*estilos ativos*/
+
+    .nav.active .nav-list {
+        clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+    }
+
+    .nav.nav.active .nav-list a {
+        opacity: 1;
+    }
+
+    .nav.nav.active .nav-toggle {
+        position: fixed;
+        top: 36px;
+        right: 16px;
+        border-top-color: transparent;
+    }
+
+    .nav.nav.active .nav-toggle::before {
+        transform: rotate(45deg);
+    }
+
+    .nav.nav.active .nav-toggle::after {
+        transform: rotate(-45deg);
+        top: -8px;
+    }
+}
+/* ==================== SOBRE MIM ==================== */
 
 .sobre-mim {
     display: flex;
