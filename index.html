@@ -6,18 +6,18 @@
 
     <link rel="icon" type=" image/x-icon" href="./assets/imgs/ps.ico">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="./assets/js/script.js" defer></script>
+    <script src="./assets/js/script.js" defer></script> <!-- O defer especifica que o script será baixado em paralelo à análise da página e executado após a conclusão da análise da página. -->
     
     <title>Sou o Pablo!</title>
 </head>
 <body>
-    <!-- BARRA DE NAVEGAÇÃO (TOPO) -->
+    <!-- ==================== BARRA DE NAVEGAÇÃO (TOPO) ==================== -->
         <nav class="nav">
             <a href="./index.html" class="logo">
                 <b>P</b>ablo <b>S</b>ilva
             </a>
 
-            <button class="nav-toggle"></button>
+            <button class="nav-toggle"></button> <!-- Menu Hamburguer -->
 
             <ul class="nav-list">
                 <li>
@@ -36,17 +36,45 @@
         </nav>
 
     <!-- SOBRE MIM -->
-    <main class="sobre-mim">
-        <div class="card-sobre">
-            <img src="./assets/imgs/kobayashi.jpg" class="foto-perfil" alt="Foto do Pablo Silva">
-            <h1>Sou o Pablo!</h1>
-            <h2>Desenvolvedor de Jogos Indie</h2>
-            <p>Ainda tem muito placeholder por aqui, então fique com o: Mussum Ipsum, cacilds vidis litro abertis.  Detraxit consequat et quo num tendi nada. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. A ordem dos tratores não altera o pão duris.<br>
-            Quem manda na minha terra sou euzis! Cevadis im ampola pa arma uma pindureta. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.<br>
-            In elementis mé pra quem é amistosis quis leo. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.<br>
-            </p>
-        </div>
+    <main>
+        <section class="sobre-mim">
+            <header class="card">
+                <div>
+                    <img src="./assets/imgs/wallace.jpg" alt="Foto do Pablo Silva">
+                </div>
+                <div class="card-text">
+                    <h1>Olá, sou o Pablo Silva!</h1>
+                    <h2> &bull; Desenvolvedor de jogos</h2>
+                </div>
+            </header>
+            <article class="descricao">
+                <p>Mussum Ipsum, cacilds vidis litro abertis.  Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Hoje é sexta-feris, dia da maldadis!
+                Copo furadis é disculpa de bebadis, arcu quam euismod magna. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Viva Forevis aptent taciti sociosqu ad litora torquent. Diuretics paradis num copo é motivis de denguis.
+                Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Detraxit consequat et quo num tendi nada. Delegadis gente finis, bibendum egestas augue arcu ut est. Si num tem leite então bota uma pinga aí cumpadi!
+                </p>
+            </article>
+        </section>
     </main>
-
 </body>
 </html>
+
+<!--
+CÓDIGO FEITO POR: PABLO SILVA
+OBRIGADO POR VISITAR!
+
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠤⣒⠶⠛⠉⠉⠻⠾⠉⠑⠲⢤⣄⠀⠀⠀⠀⠀⠀⠀
+⠀⣠⠤⠒⠠⣄⣀⣴⡏⢀⠞⠁⠀⠀⣀⣀⣀⣄⣀⡀⠀⠈⠙⡗⡤⠐⠒⠦⢄⠀
+⠊⢁⠔⠒⠀⣈⠛⠉⢠⢋⠤⠖⠊⠉⠁⠀⠀⠀⠀⢈⠁⠲⡄⡘⡵⡄⠀⠀⠀⠀
+⠀⠰⡀⠀⡰⠃⠀⣠⠛⠁⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⡄⠀⣉⠈⢳⡈⢆⠀⠀⠀
+⢧⡀⠈⣩⠁⠀⡜⠁⠀⢀⠆⠀⠈⠀⠀⡇⠀⠀⠀⢠⢣⠀⢸⠀⠀⠹⡄⢃⠀⠠
+⠀⠉⣻⡇⠀⢰⠃⠀⠀⣸⠀⠀⡄⠀⠀⡇⠀⠀⠀⢸⣸⠀⠈⡇⢸⡀⢿⠈⡆⠀
+⠀⠀⢣⠃⠀⢸⠀⠀⠀⡇⠀⠀⡇⠀⢰⠃⠀⠀⠀⠈⣸⡆⠀⡇⠀⡇⢸⠀⡄⠀
+⠀⠀⢸⠀⠀⢸⠀⠀⠀⡅⣠⣼⣷⣾⣿⡒⠒⠒⠶⢦⣿⣷⣤⣇⣀⡇⢸⢸⡇⠀
+⠀⠀⠈⢷⣠⠼⡄⠀⠀⡇⢸⡶⣿⡿⣧⠀⠀⠀⠀⠀⡶⣿⡿⡇⢸⠀⣿⣮⠇⠀
+⠀⠀⢀⠀⢹⠀⢧⠀⠀⠀⠈⠣⣈⡡⠏⠀⠀⠀⠀⠀⠳⣀⡠⠇⢸⢀⣿⡝⠀⠀
+⠀⠀⠘⣆⠸⣢⣘⡄⢀⡇⠀⠀⠀⠀⠀⢀⣤⣴⣦⣤⣀⠀⠀⢀⣸⣸⣿⣄⠀⠀
+⠀⠀⠀⠈⠳⣝⣀⣷⢸⣟⠶⢧⡤⠤⢴⣿⠋⣠⠜⠈⠙⣧⠞⠉⠀⠈⠙⢿⢆⠀
+⠀⠀⠀⢀⢀⠠⠈⣿⣼⠇⢰⠋⠀⠀⠀⠙⣴⡃⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠘⢄
+⠀⠀⠀⠈⠦⡤⢀⣾⡹⡄⠸⡄⠀⠀⠀⢀⠏⠁⠀⠀⠀⠀⠀⠀⠀⠀⣠⠟⠀⠜
+⠀⠀⠀⠀⠀⠨⠰⠃⠀⠈⠓⢚⠒⠲⠖⢻⣦⣀⠀⠀⠀⠀⠀⠀⣠⠾⡁⠀⠈⠀
+-->

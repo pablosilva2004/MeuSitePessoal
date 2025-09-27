@@ -1,11 +1,11 @@
 /* 
 ==================== CORES ====================
 
-Background: #292b2c
-Background mais claro: #555555
-Cor principal: #00bfff
-Cor secundária: #6bed00
-Cor text0: #f0f0f0
+Background CINZA: #292b2c
+Background mais claro CINZA CLARO: #555555
+Cor principal AZUL: #00bfff 
+Cor secundária VERDE: #6bed00
+Cor texto BRANCO: #f0f0f0
 
 */
 
@@ -20,26 +20,27 @@ Cor text0: #f0f0f0
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* especifica se a posição de rolagem deve ser suavemente animada, em vez de um salto direto, quando o usuário clica em um link dentro de uma caixa rolável. */
 }
 
 body {
-    background-color: #292b2c;
     padding-top: 80px;
+    background-color: #292b2c;
+    background: url(/assets/imgs/background-test.jpg);
 }
 
 /* ==================== BARRA DE NAVEGAÇÃO ==================== */
 .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    padding: 0 40px;
-    margin-inline: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: fixed; /* controla o posicionamento de elementos dentro de uma página web. | é posicionado em relação à janela de visualização, o que significa que ele sempre permanece no mesmo lugar, mesmo que a página seja rolada. */
+    top: 0; /* Posição vertical. OBS: Esta propriedade não tem efeito em elementos não posicionados. */
+    left: 0; /* Posição Horizontal. */
+    width: 100%; /* define a largura de um elemento. */
+    height: 80px; /* define a altura de um elemento. */
+    padding: 0 40px; /* gerar espaço/preenchimento ao redor do conteúdo de um elemento, dentro de quaisquer bordas definidas. | Superior e Inferior, Esquerdo e Direito */
+    margin-inline: auto; /* Especifica a margem no início e no fim na direção inline/em linha. */
+    display: flex; /* Especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento. */
+    justify-content: space-between; /* alinha os itens do contêiner flexível quando os itens não usam todo o espaço disponível no eixo principal (HORIZONTAL) */
+    align-items: center; /* justify-content, só que na vertical*/
     
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 2px 2px rgba(0,0,0,0);
     background-color: #292b2c;
@@ -49,7 +50,7 @@ body {
 }
 
 .logo {
-    margin-right: auto;
+    margin-left: 0;
     font-family: "Recursive", sans-serif;
     text-decoration: none;
     color: inherit;
@@ -69,26 +70,27 @@ body {
 .nav-list {
     font-family: "Inter", sans-serif;
     display: flex;
-    gap: 25px;
-    list-style: none;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 25px; /* define o tamanho do espaço entre as linhas e entre as colunas em layouts flexbox, de grade ou multicolunas. */
+    list-style: none; /* Tira a função/traço das listas */
+    flex-wrap: wrap; /* Especifica se os itens flexíveis devem ser encapsulados ou não. */
+    justify-content: center; 
 }
 
 .nav-list a {
-    text-decoration: none;
+    text-decoration: none; /* Tira a propriedade link do texto*/
     color: #f0f0f0;
     text-shadow: 2px 2px 4px #555555;
-    transition: 0.3s
+    transition: .3s
 }
 
 .nav-list a:hover {
     color: #00bfff;
 }
 
-/* MENU HAMBURGUER */
+/* ===== MENU HAMBURGUER ===== */
 
 .nav-toggle {
+    /* ESCONDE TUDO POR PADRÃO */
     display: none;
     border: none;
     background: none;
@@ -96,6 +98,7 @@ body {
     cursor: pointer;
 }
 
+/* before e after inserem algum conteúdo antes ou depois do conteúdo do elemento especificado. */
 .nav-toggle::before,
 .nav-toggle::after {
     content: " ";
@@ -119,9 +122,9 @@ body {
         top: 0;
         left: 0;
         width: 100vw;
-        height: 100vh;
+        height: 40vh;
         background: #00bfff;
-        clip-path: circle(100px at 90% -15%);
+        clip-path: circle(40px at 90% -15%);
         transition: .5s ease-out;
 
         flex-direction: column;
@@ -137,80 +140,135 @@ body {
         opacity: 0;
     }
 
-     .nav-list li:nth-child(1) a {
-        transition: 0.5s 0.2s;
+    .nav-list li:nth-child(1) a {
+        transition: 0.3s 0.1s;
     }
 
     .nav-list li:nth-child(2) a {
-        transition: 0.5s 0.4s;
+        transition: 0.3s 0.3s;
     }
 
     .nav-list li:nth-child(3) a { 
-        transition: 0.5s 0.6s;
+        transition: 0.3s 0.5s;
     }
 
     .nav-list li:nth-child(4) a {
-        transition: 0.5s 0.8s;
+        transition: 0.3s 0.7s;
     }
 
-    /*estilos ativos*/
+    /* ANIMAÇÃO FRU FRU E TUDO MAIS */
 
     .nav.active .nav-list {
-        clip-path: circle(1500px at 90% -15%);
+        clip-path: circle(900px at 90% -15%);
         pointer-events: all;
     }
 
-    .nav.nav.active .nav-list a {
+    .nav.active .nav-list a {
         opacity: 1;
     }
 
-    .nav.nav.active .nav-toggle {
+    .nav.active .nav-toggle {
         position: fixed;
         top: 36px;
         right: 16px;
         border-top-color: transparent;
     }
 
-    .nav.nav.active .nav-toggle::before {
+    .nav.active .nav-toggle::before {
         transform: rotate(45deg);
     }
 
-    .nav.nav.active .nav-toggle::after {
+    .nav.active .nav-toggle::after {
         transform: rotate(-45deg);
         top: -8px;
     }
+}
+
+.fundo {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* fica atrás de tudo */
+    display: block;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 /* ==================== SOBRE MIM ==================== */
 
 .sobre-mim {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin-inline: auto;
+    min-height: calc(100vh - 200px);
+    width: 100%;
+    max-width: 800px;
+    padding: 60px;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin: 0 auto; 
+}
+
+.card {
+    background-color: #00bfff;
+    color: #f0f0f0;
+    flex: 0 0 300px;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-inline: auto;
-    min-height: calc(100vh - 80px);
-    max-width: 500px;
-    padding: 30px;
-    text-align: center;
-}
-
-.card-sobre {
+    width: 280px;
+    gap: 20px;
+    padding: 30px 190px;
+    text-align: left;
+    margin: 0 auto;
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 2px 2px rgba(0,0,0,0); 
-    background-color: #00bfff;
 }
 
-.card-sobre > h1 {
-    color: #f0f0f0;
-    margin-bottom: 10px;
-}
-.card-sobre > p {
-    margin: 10px;
-}
-
-.foto-perfil {
-    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+.card img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    display: block;
-    margin: 20px auto 20px auto;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
 }
+.card-text {
+    font-size: 20px;
+    justify-content: center;
+    white-space: nowrap;
+}
+.card-text h2 {
+    font-size: 25px;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.descricao {
+    flex: 1;      
+    color: #f0f0f0;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+@media (max-width: 750px) {
+    .sobre-mim {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        flex-direction: column;   /* Foto em cima, texto embaixo */
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 200px;  
+    }
+
+    .descricao {
+        text-align: justify;
+        margin: 0 auto 20px auto; 
+    }
+}
+
