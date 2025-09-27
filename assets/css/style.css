@@ -47,6 +47,7 @@ body {
     color: #f0f0f0;
     font-size: 20px;
     box-sizing: border-box; /* Permite incluir o preenchimento e a borda na largura e altura totais de um elemento.*/
+    z-index: 3;
 }
 
 .logo {
@@ -261,7 +262,37 @@ body {
 }
 
 .descricao p:last-child {
-    font-size: 23px;
+    font-size: 20px;
+}
+
+
+.botao-curriculo {
+    justify-content: center;
+    align-items: center;
+    background-color: #6bed00;
+    color: #000;
+    border-style: none;
+    box-sizing: border-box;
+    font-size: 30px;
+    text-align: center;
+    padding: 40px 40px;
+    position: relative;
+    margin-bottom: 70px;
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 2px 2px rgba(0,0,0,0); 
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.rodape {
+    background-color: #00bfff;
+    color: #f0f0f0;
+    padding: 20px;
+    font-size: 15px;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    height: 100%;
 }
 
 /* Responsividade Sobre-Mim */
@@ -300,29 +331,13 @@ body {
         
         font-size: 15px;
     }
-}
+    .botao-curriculo {
+        font-size: 20px;
+        padding: 20px 20px;
+    }
 
-.botao-curriculo {
-    justify-content: center;
-    align-items: center;
-    background-color: #6bed00;
-    color: #000;
-    border-style: none;
-    box-sizing: border-box;
-    font-size: 30px;
-    text-align: center;
-    padding: 40px 40px;
-    position: relative;
-    margin-bottom: 70px;
-    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 2px 2px rgba(0,0,0,0); 
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.rodape {
-    background-color: #00bfff;
-    color: #f0f0f0;
-    padding: 20px;
-    justify-content: center;
-    text-align: center;
+    .rodape {
+        padding: 5px;
+        font-size: 10px;
+    }
 }

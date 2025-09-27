@@ -1,11 +1,11 @@
 /* 
 ==================== CORES ====================
 
-Background: #292b2c
-Background mais claro: #555555
-Cor principal: #00bfff
-Cor secundária: #6bed00
-Cor text0: #f0f0f0
+Background CINZA: #292b2c
+Background mais claro CINZA CLARO: #555555
+Cor principal AZUL: #00bfff 
+Cor secundária VERDE: #6bed00
+Cor texto BRANCO: #f0f0f0
 
 */
 
@@ -31,32 +31,34 @@ body {
 
 /* ==================== BARRA DE NAVEGAÇÃO ==================== */
 .nav {
-    position: fixed; /* controla o posicionamento de elementos dentro de uma página web. | é posicionado em relação à janela de visualização, o que significa que ele sempre permanece no mesmo lugar, mesmo que a página seja rolada. */
+    position: fixed; /* Controla o posicionamento de elementos dentro de uma página web. | é posicionado em relação à janela de visualização, o que significa que ele sempre permanece no mesmo lugar, mesmo que a página seja rolada. */
     top: 0; /* Posição vertical. OBS: Esta propriedade não tem efeito em elementos não posicionados. */
     left: 0; /* Posição Horizontal. */
-    width: 100%; /* define a largura de um elemento. */
-    height: 80px; /* define a altura de um elemento. */
-    padding: 0 40px; /* gerar espaço/preenchimento ao redor do conteúdo de um elemento, dentro de quaisquer bordas definidas. | Superior e Inferior, Esquerdo e Direito */
+    width: 100%; /* Define a largura de um elemento. */
+    height: 80px; /* Define a altura de um elemento. */
+    padding: 0 40px; /* Gerar espaço/preenchimento ao redor do conteúdo de um elemento, dentro de quaisquer bordas definidas. | Superior e Inferior, Esquerdo e Direito */
     margin-inline: auto; /* Especifica a margem no início e no fim na direção inline/em linha. */
     display: flex; /* Especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento. */
-    justify-content: space-between; /* alinha os itens do contêiner flexível quando os itens não usam todo o espaço disponível no eixo principal (HORIZONTAL) */
+    justify-content: space-between; /* Alinha os itens do contêiner flexível quando os itens não usam todo o espaço disponível no eixo principal (HORIZONTAL) */
     align-items: center; /* justify-content, só que na vertical*/
     
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 2px 2px rgba(0,0,0,0);
     background-color: #292b2c;
     color: #f0f0f0;
     font-size: 20px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Permite incluir o preenchimento e a borda na largura e altura totais de um elemento.*/
+    z-index: 3;
 }
 
 .logo {
-    margin-left: 0;
+    margin-left: 0; /* Criar espaço à esquerda do elemento */
+
     font-family: "Recursive", sans-serif;
     text-decoration: none;
-    color: inherit;
-    font-size: 22px;
+    color: inherit; /* Tô herdando a cor do .nav pra .logo */
+    font-size: 22px; 
     text-shadow: 2px 2px 4px #555555;
-    transition: 0.3s
+    transition: .3s;
 }
 
 .logo b:first-child {
@@ -68,16 +70,17 @@ body {
 }
 
 .nav-list {
-    font-family: "Inter", sans-serif;
     display: flex;
-    gap: 25px; /* define o tamanho do espaço entre as linhas e entre as colunas em layouts flexbox, de grade ou multicolunas. */
-    list-style: none; /* Tira a função/traço das listas */
+    gap: 25px; /* Define o tamanho do espaço entre as linhas e entre as colunas em layouts flexbox, de grade ou multicolunas. */
     flex-wrap: wrap; /* Especifica se os itens flexíveis devem ser encapsulados ou não. */
     justify-content: center; 
+    
+    font-family: "Inter", sans-serif;
+    list-style: none; /* Tira a função/traço das listas */
 }
 
 .nav-list a {
-    text-decoration: none; /* Tira a propriedade link do texto*/
+    text-decoration: none; /* Tira a propriedade link do texto */
     color: #f0f0f0;
     text-shadow: 2px 2px 4px #555555;
     transition: .3s
@@ -90,12 +93,13 @@ body {
 /* ===== MENU HAMBURGUER ===== */
 
 .nav-toggle {
-    /* ESCONDE TUDO POR PADRÃO */
+    /* ESCONDE TUDO POR PADRÃO (DESKTOP) */
     display: none;
     border: none;
     background: none;
     border-top: 3px solid #f0f0f0;
-    cursor: pointer;
+
+    cursor: pointer; /* Cursor ponteiro */
 }
 
 /* before e after inserem algum conteúdo antes ou depois do conteúdo do elemento especificado. */
@@ -103,41 +107,45 @@ body {
 .nav-toggle::after {
     content: " ";
     display: block;
+    position: relative;
+    margin-top: 5px;
     width: 30px;
     height: 3px;
+
     background: #f0f0f0;
-    margin-top: 5px;
-    position: relative;
     transition: .3s;
 }
 
+/* Responsividade Nav */
 @media (max-width: 750px) {
+    /* === Menu modo Hamburguer === */
     .nav-toggle {
         display: block;
-        z-index: 2;
+        z-index: 2; /* O Hamburguer fica na frente de tudo e de todos, RESPEITEM O HAMBURGUER! */
     }
 
     .nav-list {
         position: fixed;
         top: 0;
         left: 0;
+        flex-direction: column;
+        justify-content: space-around;
         width: 100vw;
         height: 40vh;
+        gap: 0;
+        align-items: center;
+
         background: #00bfff;
         clip-path: circle(40px at 90% -15%);
         transition: .5s ease-out;
 
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        gap: 0;
-        pointer-events: none;
-        z-index: 1;
+        pointer-events: none; /* Não posso interagir com a lista se eu não cliquei no hamburguer :) */
+        z-index: 1; /* A lista fica na frente de tudo, menos do hamburguer */
     }
 
     .nav-list a {
         font-size: 24px;
-        opacity: 0;
+        opacity: 0; /* Não tem lista, então ela não vai aparecer*/
     }
 
     .nav-list li:nth-child(1) a {
@@ -156,15 +164,15 @@ body {
         transition: 0.3s 0.7s;
     }
 
-    /* ANIMAÇÃO FRU FRU E TUDO MAIS */
+    /* === Menu modo Lista === */
 
     .nav.active .nav-list {
         clip-path: circle(900px at 90% -15%);
-        pointer-events: all;
+        pointer-events: all; /* Agora eu posso :) */
     }
 
     .nav.active .nav-list a {
-        opacity: 1;
+        opacity: 1; /* Agora ela aparece */
     }
 
     .nav.active .nav-toggle {
@@ -173,7 +181,7 @@ body {
         right: 16px;
         border-top-color: transparent;
     }
-
+    /* Transformando o hamburguer mágico em um X */
     .nav.active .nav-toggle::before {
         transform: rotate(45deg);
     }
@@ -182,7 +190,9 @@ body {
         transform: rotate(-45deg);
         top: -8px;
     }
+    /*                                            */
 }
+/* ============================================================ */
 
 /* =============================================== */
 img {
