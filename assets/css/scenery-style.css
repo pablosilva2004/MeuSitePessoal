@@ -26,7 +26,9 @@ html {
 body {
     padding-top: 80px;
     background-color: #292b2c;
-    background: url(../imgs/background.jpg);
+    background: url(../imgs/scenery-games.gif) no-repeat fixed;
+    background-size: cover;         /* cobre a tela toda */
+    background-attachment: fixed;
 }
 
 /* ==================== BARRA DE NAVEGAÇÃO ==================== */
@@ -195,12 +197,43 @@ body {
 /* ============================================================ */
 
 /* ==================== SCENERY GAMES ==================== */
-h1 {
-    color: #f0f0f0;
+.banner img {
+    display: block;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 700px;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto 20px auto;
 }
 
-p {
+h1 {
+    display: block;
     color: #f0f0f0;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.descricao p {
+    font-family: "Recursive", sans-serif;
+    font-size: 30px;
+    justify-content: center;
+    text-align: justify;
+    width: 50%;
+    color: #f0f0f0;
+    margin: 0 auto 20px auto;
+}
+
+.malign-mix {
+    display: block;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 550px;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto 20px auto;
 }
 
 /* ========== RODAPÉ ========== */
@@ -218,6 +251,20 @@ p {
 
 /* Responsividade Scenery Games */
 @media (max-width: 750px) {
+    .banner img {
+        width: 300px;
+        height: auto;
+    }
+
+    .descricao p {
+        font-size: 20px;
+        text-align: center;
+    }
+    .malign-mix {
+        width: 180px;
+        height: auto;
+    }
+
     .rodape {
         padding: 5px;
         font-size: 10px;
