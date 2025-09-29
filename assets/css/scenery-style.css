@@ -266,7 +266,14 @@ h1 {
         height: auto;
     }
 
+    .botao-contatos {
+        padding: 20px;
+        max-width: 300px;
+        font-size: 20px;
+    }
+    
     .rodape {
         font-size: 10px;
     }
+
 }

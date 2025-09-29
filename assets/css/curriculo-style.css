@@ -280,6 +280,7 @@ body {
     }
     .botao-scenery {
         padding: 20px;
+        max-width: 300px;
         font-size: 15px;
     }
 
