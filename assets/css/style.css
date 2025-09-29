@@ -1,4 +1,8 @@
 /* 
+
+==================== STLYE DO SITE ====================
+Está uma "bagunça" pelo tanto de comentários, mas é pra eu aprender melhor :)
+
 ==================== CORES ====================
 
 Background CINZA: #292b2c
@@ -16,6 +20,7 @@ Cor texto BRANCO: #f0f0f0
 /* ALTERA TUDO DO HTML (TUDO MESMO!)*/
 * {
     padding: 0;
+    margin: 0;
     font-family: "Inter", sans-serif;
 }
 
@@ -24,7 +29,7 @@ html {
 }
 
 body {
-    padding-top: 80px;
+    margin-top: 80px; /* Margem|Distância do topo até o primeiro card (pro card não ficar por baixo do nav) */
     background-color: #292b2c;
     background: url(../imgs/background.jpg);
 }
@@ -58,7 +63,6 @@ body {
     color: inherit; /* Tô herdando a cor do .nav pra .logo */
     font-size: 22px; 
     text-shadow: 2px 2px 4px #555555;
-    transition: .3s;
 }
 
 .logo b:first-child {
@@ -128,15 +132,15 @@ body {
         position: fixed;
         top: 0;
         left: 0;
-        flex-direction: column;
+        flex-direction: column; /* Especifica a direção dos itens flexíveis. (Apenas com display: flex;)*/
         justify-content: space-around;
-        width: 100vw;
-        height: 40vh;
+        width: 100vw; /* Em relação a 1% da largura da janela de vizualização */
+        height: 40vh; /* Em relação a 1% da altura da janela de vizualização */
         gap: 0;
         align-items: center;
 
         background: #00bfff;
-        clip-path: circle(40px at 90% -15%);
+        clip-path: circle(20px at 90% -15%);
         transition: .5s ease-out;
 
         pointer-events: none; /* Não posso interagir com a lista se eu não cliquei no hamburguer :) */
@@ -190,7 +194,6 @@ body {
         transform: rotate(-45deg);
         top: -8px;
     }
-    /*                                            */
 }
 /* ============================================================ */
 
@@ -213,14 +216,13 @@ body {
 
 .card {
     display: flex;
-    flex: 0 0 300px;
     justify-content: center;
     align-items: center;
     flex-direction: row;
 
-    width: 280px;
+    max-width: 280px;
     gap: 20px;
-    padding: 30px 190px; /* Tamanho card */
+    padding: 30px 190px; /* Tamanho do card */
     margin: 0 auto;
     
     background-color: #00bfff;
@@ -234,6 +236,7 @@ body {
 
 .card:hover {
     transform: scale(1.01); /* levanta e dá um leve zoom */
+
     box-shadow: 0px 20px 25px -10px #000000, 10px 10px 5px 2px rgba(0,0,0,0.3);
 }
 
@@ -241,13 +244,16 @@ body {
     width: 200px;
     height: 200px;
     border-radius: 50%;
+
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
 }
+
 .card-text {
-    font-size: 20px;
     justify-content: center;
     white-space: nowrap;
+    font-size: 20px;
 }
+
 .card-text h2 {
     font-size: 25px;
 }
@@ -256,45 +262,52 @@ body {
     max-width: 85%;
     
     font-size: 20px;
-    color: #f0f0f0;
     text-align: justify;
     text-indent: 30px;
+    color: #f0f0f0;
 }
 
 .descricao p:last-child {
     font-size: 20px;
 }
 
-
 .botao-curriculo {
-    background-color: #6bed00;
-    color: #000;
-    border-style: none;
+    display: flex;
+    justify-content: center;
+    max-width: 400px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 40px;
     box-sizing: border-box;
+    
+    border-radius: 5px;
+    border-style: none;
+    color: #000;
+    background-color: #6bed00;
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 2px 2px rgba(0,0,0,0); 
+    
     font-size: 30px;
     text-align: center;
-    padding: 40px 40px;
-    position: relative;
-    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 2px 2px rgba(0,0,0,0); 
-    border-radius: 5px;
     text-decoration: none;
 }
+/* ============================================================ */
 
-/* ========== RODAPÉ ========== */
+/* ==================== RODAPÉ ==================== */
 .rodape {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    margin-top: 40px;
+    box-sizing: border-box;
+    
     background-color: #00bfff;
     color: #f0f0f0;
-    padding: 20px;
     font-size: 15px;
-    justify-content: center;
     text-align: center;
-    margin: 0;
-    display: flex;
-    height: 100%;
-    margin-top: 40px;
 }
 
-/* Responsividade Sobre-Mim */
+/* ===== RESPONSIVIDADE ===== */
 @media (max-width: 750px) {
     .sobre-mim {
         flex-direction: column;
@@ -303,14 +316,14 @@ body {
 
     .card {
         flex-direction: column;   /* Foto em cima, texto embaixo */
-        padding: 15px 50px; /* Tamanho card, MAS NO MOBILE */
+        padding: 15px 50px;
         max-width: 200px;  
         text-align: center;
     }
 
     .card img {
         width: 120px;
-        height: 120px;
+        height: auto;
     }
     
     .card-text {
@@ -324,19 +337,19 @@ body {
     }
 
     .descricao {
+        max-width: 80%;
         flex-direction: row;
         margin: 20px auto 0px auto;
-        max-width: 80%;
         
         font-size: 15px;
     }
+
     .botao-curriculo {
+        padding: 20px;
         font-size: 20px;
-        padding: 20px 20px;
     }
 
     .rodape {
-        padding: 5px;
         font-size: 10px;
     }
 }
